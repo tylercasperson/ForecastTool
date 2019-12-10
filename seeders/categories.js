@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('categorys', [
+    return queryInterface.bulkInsert('categories', [
       {
         MainCategory: "Spotify",
         SubCategory: "Rock",
@@ -31,6 +31,6 @@ module.exports = {
       ], {});
     },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('categorys', null, {});
+    return queryInterface.bulkDelete('categories', null, {});
   }
 };

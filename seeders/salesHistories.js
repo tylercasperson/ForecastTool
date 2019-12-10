@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('salesHistorys', [    
+    return queryInterface.bulkInsert('salesHistories', [    
       {
         CategoryID: "1", 
         numberTypeID: "1",
@@ -102,15 +102,15 @@ module.exports = {
         ForecastData: "[9880, 17025, 13335, 20866, 6929, 20276, 10168, 23997, 6974, 21492, 19820, 27035]"
     },
     {
-        categoryID: "5",
+        CategoryID: "5",
         numberTypeID: "1",
         CategoryYear: "2019",
         SalesData: "[26977, 14050, 23790, 38642, 20557, 30104, 26806, 20578, 14563, 16299, 39720, 39545]",
         ForecastData: "[12343, 20036, 15862, 38202, 15406, 26448, 36855, 24558, 16255, 15645, 25452, 18102]"
     },
     {
-        categoryID: "Computer",
-        numberTypeID: "Revenue",
+        CategoryID: "5",
+        numberTypeID: "1",
         CategoryYear: "2019",
         SalesData: "[19693, 7306, 12609, 25890, 14390, 22578, 20105, 11524, 9175, 12224, 28201, 23727]",
         ForecastData: "[9381, 13424, 9200, 23685, 11400, 17985, 19165, 15472, 10891, 12829, 17307, 9775]"
@@ -118,6 +118,6 @@ module.exports = {
     ], {});
     },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('salesHistorys', null, {});
+    return queryInterface.bulkDelete('salesHistories', null, {});
   }
 };

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('numberTypes', [
+    return queryInterface.bulkInsert('forecastMethods', [
       {
         Method: "Regression",
         MethodDescription: "Regression Analysis",
@@ -18,6 +18,6 @@ module.exports = {
     ], {});
     },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('numberTypes', null, {});
+    return queryInterface.bulkDelete('forecastMethods', null, {});
   }
 };

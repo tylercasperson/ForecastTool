@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       CategoryDescription: DataTypes.STRING
     });
     category.associate = function(models) {
-      category.hasMany(models.salesHistory, { as: "Category" });
+      category.hasMany(models.salesHistory, { as: "Category" }, { onDelete: "Cascade"});
     };
     return category;
   };
