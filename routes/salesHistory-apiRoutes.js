@@ -1,36 +1,12 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/SalesHistories", function(req, res) {
-    db.SalesHistory.findAll({}).then(function(RunFourDB) {
-      res.json(RunFourDB);
-    });
-  });
-
-  app.get("/api/SalesHistories/:id", function(req, res) {
-    db.SalesHistory.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(RunFourDB) {
-      res.json(RunFourDB);
-    });
-  });
-
-  app.post("/api/SalesHistories", function(req, res) {
-    console.log(req.body);
-    db.SalesHistory.create(req.body).then(function(RunFourDB) {
-      res.json(RunFourDB);
-    });
-  });
-
-  app.delete("/api/SalesHistories/:id", function(req, res) {
-    db.SalesHistory.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(RunFourDB) {
-      res.json(RunFourDB);
+  // GET route for getting all of the todos
+  app.get("/api/salesHistory", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.salesHistory.findAll({}).then(function(ForecastToolDB) {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(ForecastToolDB);
     });
   });
 };

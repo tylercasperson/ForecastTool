@@ -1,59 +1,37 @@
-<html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Months');
-      data.addColumn('number', 'Sales History');
-      data.addColumn('number', 'Forecast');
-    
-      data.addRows([
-        $.ajax({
-            method: 'GET',
-            datatype: 'json',
-            url: url,
-            data: {query: odb_query},
-                Success: function(data) {
-                    var bindings = data.results.bindings
-
-                    var data = new google.visulization.DataTable();
-                    data.addColumn('string', 'Year');
-                    data.addColumn('string', 'Data');
-
-                    bindings.forEach(function(tabledata) {
-                        data.addRows([
-                            tabledata.periodlabel.value,parseFloat(tabledata.count.value)]
-                        ]);
-                    });
-                }
-        });  
-
-      var options = {
-        chart: {
-          title: 'Sales history and forecast',
-          subtitle: ' '
-        },
-        width: 900,
-        height: 500,
-        axes: {
-          x: {
-            0: {side: 'top'}
-          }
-        }
-      };
-
-      var chart = new google.charts.Line(document.getElementById('line_top_x'));
-
-      chart.draw(data, google.charts.Line.convertOptions(options));
-    }
-  </script>
-</head>
+<!DOCTYPE html>
+<html lang="en-US">
 <body>
-  <div id="line_top_x"></div>
+
+<h1>My Web Page</h1>
+
+<div id="linechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Work', 8],
+  ['Eat', 2],
+  ['TV', 4],
+  ['Gym', 2],
+  ['Sleep', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+  chart.draw(data, options);
+}
+</script>
+
 </body>
 </html>

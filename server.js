@@ -45,4 +45,6 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
+app.get('/', (req, res) => res.send('INDEX'));
+
 module.exports = app;
