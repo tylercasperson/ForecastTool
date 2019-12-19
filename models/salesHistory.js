@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes) {
       CategoryYear: DataTypes.INTEGER,
       SalesData: DataTypes.TEXT,
       ForecastData: DataTypes.TEXT,
+      StagedData: DataTypes.TEXT,
       createdAt: {
         field: 'created_at',
         type: DataTypes.DATE

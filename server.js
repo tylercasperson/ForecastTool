@@ -24,6 +24,8 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/salesHistory-apiRoutes")(app);
+require("./routes/category-apiRoutes")(app);
+require("./routes/forecastMethod-apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false}; //turn back to false
