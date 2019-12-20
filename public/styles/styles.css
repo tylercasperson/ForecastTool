@@ -61,3 +61,6 @@ button {
 a {
   color: inherit;
 }
+th td {
+  text-align: center;
+}
