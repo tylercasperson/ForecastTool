@@ -24,23 +24,39 @@
           "Content-Type": "application/json"
         },
         type: "POST",
-        url: "api/salesHistory/" + id,
+        url: "api/salesHistorys/" + id,
         data: JSON.stringify(salesHistory)
       });
     },
     getSalesHistory: function() {
       return $.ajax({
-        url: "api/salesHistory",
-        type: "GET"
+        url: "api/salesHistorys",
+        type: "GET",
+        dataType: "json",
+        success: (data) => {
+            console.log('Success', data);
+        }
       });
     },
     deleteSalesHistory: function(id) {
       return $.ajax({
-        url: "api/salesHistory/" + id,
+        url: "api/salesHistorys/" + id,
         type: "DELETE"
       });
     }
   };
+
+  $('#clickme').click(() => {
+    return $.ajax({
+      url: "api/salesHistorys",
+      type: "GET",
+      dataType: "json",
+      success: (data) => {
+          console.log('Success', data);
+          $("#tyler").html(data.SalesData);
+      }
+    });
+  });
 
   // refreshExamples gets new examples from the db and repopulates the list
   var refreshData = function() {
@@ -92,6 +108,8 @@
     });
   };
 
+console.log(API.getSalesHistory);
+
   // Add event listeners to the submit and delete buttons
-  $submitBtn.on("click", handleFormSubmit);
-  $exampleList.on("click", ".delete", handleDeleteBtnClick);
+  // $submitBtn.on("click", handleFormSubmit);
+  // $exampleList.on("click", ".delete", handleDeleteBtnClick);
