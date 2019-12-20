@@ -1,3 +1,66 @@
+:root {
+  --primary: rgb(92,88,250);
+  --secondary: rgb(125,121,251);
+  --accent: rgb(157,155,252);
+  --highlight: rgb(190,198,253);
+  --plain: rgb(230,230,230);
+}
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+#logoBlock {
+  background-color: var(--primary);
+  width: 25px;
+  height: 125px;
+  margin: 10px;
+}
+#headerLeft {
+  display: flex;
+}
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--secondary);
+  margin-top: 5px; 
+}
+h2 {
+  color: var(--accent);
+  margin-top: 5px;
+}
+#logoText {
+  padding: 10px;
+  vertical-align: bottom;
+}
+nav {
+  display: flex;
+}
+nav div{
+  background-color: var(--accent);
+  color: white;
+  text-align: center;
+  padding-top: 12.5px;
+  width: 110px;
+  height: 50px;
+  margin-left: 25px;
+  font-size: large;
+  margin-top: 75px;
+}
+nav div:hover{
+  background-color: var(--primary);
+}
+td, th {
+  /* border: 1px solid black; */
+  padding: 20px;
+}
+button {
+  background-color: var(--highlight)
+}
+a {
+  color: inherit;
+}
+th td {
+  text-align: center;
 }

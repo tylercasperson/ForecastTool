@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Handlebars
+// Handlebars   
 app.engine(
   "handlebars",
   exphbs({
@@ -23,9 +23,12 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
+require("./routes/salesHistory-apiRoutes")(app);
+require("./routes/category-apiRoutes")(app);
+require("./routes/forecastMethod-apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: false}; //turn back to false
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -43,5 +46,7 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
+
+app.get('/', (req, res) => res.send('INDEX'));
 
 module.exports = app;

@@ -1,33 +1,98 @@
-<div id="home">
-  <div class="container">
+<div class="container" id="index">
+  <div class="row">
+  <div>
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
     </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <table id="dataTable" class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Category</th>
+            <th>Sub-Category</th>
+            <th>Year</th>
+            <th>January</th>
+            <th>February</th>
+            <th>March</th>
+            <th>April</th>
+            <th>May</th>
+            <th>June</th>
+            <th>July</th>
+            <th>August</th>
+            <th>September</th>
+            <th>October</th>
+            <th>November</th>
+            <th>December</th>
+            <th>edit</th>
+            <th>delete</th>
+          </tr>
+        </th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input size="10" placeholder="Category" id="mainCategory" list="mainCategory" />
+            </td>
+            <td>
+              <input size="10" placeholder="Sub-Category" id="subCategory" list="subCategory" />
+            </td>
+            <td>
+              <input size="10" placeholder="Year" id="categoryYear" tye="text" />
+            </td>
+            <td>
+              <input size="10" placeholder="" id="january" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="february" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="march" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="april" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="may" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="june" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="july" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="august" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="september" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="october" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="november" type="text"/>
+            </td>
+            <td>
+              <input size="10" placeholder="" id="december" type="text"/>
+            </td>
+            <td>
+              <input size="5" placeholder="" id="edit" type="text"/>
+            </td>
+            <td>
+              <input size="5" placeholder="" id="delete" type="text"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<p id="tyler"></p>
+
+<button id="clickme">click</button>
+
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/index.js"></script>
