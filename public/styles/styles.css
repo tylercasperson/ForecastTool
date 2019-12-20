@@ -42,7 +42,7 @@ nav div{
   color: white;
   text-align: center;
   padding-top: 12.5px;
-  width: 100px;
+  width: 110px;
   height: 50px;
   margin-left: 25px;
   font-size: large;
@@ -57,4 +57,7 @@ td, th {
 }
 button {
   background-color: var(--highlight)
+}
+a {
+  color: inherit;
 }

@@ -97,3 +97,25 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+  // Function for creating a new list row for authors
+  function createSalesHistoryRow(salesHistory) {
+    console.log(salesHistory);
+    var newTr = $("<tr>");
+    newTr.data("salesData", salesHistory);
+    newTr.append("<td>" + salesHistory.SalesData + "</td>");
+    return newTr;
+  };
+
+  // Function for retrieving authors and getting them ready to be rendered to the page
+  function getSalesHistory() {
+    $.get("/api/salesHistorys", function(data) {
+      var rowsToAdd = [];
+      for (var i = 0; i < data.length; i++) {
+        rowsToAdd.push(createSalesHistoryRow(data[i]));
+      }
+      renderSalesHistoryList(rowsToAdd);
+      nameInput.val("");
+    });
+  };
