@@ -6,13 +6,16 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/edit/:item/:gl", function(req, res) {
-    var selectedItem = {
-      gl: req.params.gl,
-      item: req.params.item
-    };
+  app.get("/importCSV", function(req, res) {
+    res.render("importCSV");
+  });
 
-    res.render("edit",selectedItem);
+  app.get("/editForecast", function(req, res) {
+    res.render("editForecast");
+  });
+
+  app.get("/settings", function(req, res) {
+    res.render("settings");
   });
 
   // Render 404 page for any unmatched routes
